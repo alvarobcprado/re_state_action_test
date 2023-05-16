@@ -85,7 +85,7 @@ void reStateTest<T extends ReState<State>, State>(
       final reState = wrapErrors(
         buildReState,
         uncaughtErrors,
-        expectErrors != null,
+        hasErrorExpectation: expectErrors != null,
       );
 
       if (reState == null) {
@@ -99,7 +99,7 @@ void reStateTest<T extends ReState<State>, State>(
         wrapErrors(
           setUp,
           uncaughtErrors,
-          expectErrors != null,
+          hasErrorExpectation: expectErrors != null,
         );
       }
 
@@ -108,7 +108,7 @@ void reStateTest<T extends ReState<State>, State>(
           // ignore: invalid_use_of_protected_member
           () => seedStates.call().forEach(reState.emitState),
           uncaughtErrors,
-          expectErrors != null,
+          hasErrorExpectation: expectErrors != null,
         );
       }
 
@@ -116,7 +116,7 @@ void reStateTest<T extends ReState<State>, State>(
         wrapErrors(
           () => actReState(reState),
           uncaughtErrors,
-          expectErrors != null,
+          hasErrorExpectation: expectErrors != null,
         );
       }
 

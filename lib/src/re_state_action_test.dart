@@ -99,7 +99,7 @@ void reStateActionTest<T extends ReStateAction<State, Action>, State, Action>(
         final reStateAction = wrapErrors(
           buildReStateAction,
           uncaughtErrors,
-          expectErrors != null,
+          hasErrorExpectation: expectErrors != null,
         );
 
         if (reStateAction == null) {
@@ -115,7 +115,7 @@ void reStateActionTest<T extends ReStateAction<State, Action>, State, Action>(
           wrapErrors(
             setUp,
             uncaughtErrors,
-            expectErrors != null,
+            hasErrorExpectation: expectErrors != null,
           );
         }
 
@@ -124,7 +124,7 @@ void reStateActionTest<T extends ReStateAction<State, Action>, State, Action>(
             // ignore: invalid_use_of_protected_member
             () => seedStates.call().forEach(reStateAction.emitState),
             uncaughtErrors,
-            expectErrors != null,
+            hasErrorExpectation: expectErrors != null,
           );
         }
 
@@ -133,7 +133,7 @@ void reStateActionTest<T extends ReStateAction<State, Action>, State, Action>(
             // ignore: invalid_use_of_protected_member
             () => seedActions.call().forEach(reStateAction.emitAction),
             uncaughtErrors,
-            expectErrors != null,
+            hasErrorExpectation: expectErrors != null,
           );
         }
 
@@ -141,7 +141,7 @@ void reStateActionTest<T extends ReStateAction<State, Action>, State, Action>(
           wrapErrors(
             () => actReStateAction(reStateAction),
             uncaughtErrors,
-            expectErrors != null,
+            hasErrorExpectation: expectErrors != null,
           );
         }
 
