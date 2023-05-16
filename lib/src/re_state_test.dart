@@ -89,7 +89,7 @@ void reStateTest<T extends ReState<State>, State>(
       );
 
       if (reState == null) {
-        test.expect(uncaughtErrors, test.wrapMatcher(expectErrors));
+        test.expect(uncaughtErrors, test.wrapMatcher(expectErrors!()));
         return;
       }
 

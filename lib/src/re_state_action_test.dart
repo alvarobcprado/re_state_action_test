@@ -103,7 +103,7 @@ void reStateActionTest<T extends ReStateAction<State, Action>, State, Action>(
         );
 
         if (reStateAction == null) {
-          test.expect(uncaughtErrors, test.wrapMatcher(expectErrors));
+          test.expect(uncaughtErrors, test.wrapMatcher(expectErrors!()));
           return;
         }
 
