@@ -25,7 +25,7 @@ void main() {
         buildReState: () => TestState(0),
         seedStates: () => [1, 2],
         actReState: (reState) => reState.increment(),
-        expectStates: () => [0, 1, 3],
+        expectStates: () => [0, 1, 2, 3],
       );
 
       reStateTest<TestState, int>(
