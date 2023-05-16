@@ -28,14 +28,15 @@ import 'package:test/test.dart' as test;
 ///
 /// [wait] is an optional duration to wait before asserting the [expectStates].
 ///
-/// [expectStates] is an optional function that returns an iterable of states
-/// that are expected to be emitted by the `ReStateAction` in order.
+/// [expectStates] is an optional function that returns a matcher that verifies
+/// the states that are expected to be emitted by the `ReStateAction` in order.
 ///
-/// [expectActions] is an optional function that returns an iterable of actions
-/// that are expected to be emitted by the `ReStateAction` in order.
+/// [expectActions] is an optional function that returns a matcher that
+/// verifies the actions that are expected to be emitted by the `ReStateAction`
+/// in order.
 ///
-/// [expectErrors] is an optional function that returns an iterable of errors
-/// that are expected to be emitted by the `ReStateAction` in order.
+/// [expectErrors] is an optional function that returns a matcher that verifies
+/// the errors that are expected to be thrown by the `ReStateAction` in order.
 ///
 /// [verifyReStateAction] is an optional function that is called to verify the
 /// `ReStateAction` after the test expectations have been asserted.
@@ -81,9 +82,9 @@ void reStateActionTest<T extends ReStateAction<State, Action>, State, Action>(
   Iterable<Action> Function()? seedActions,
   dynamic Function(T reStateAction)? actReStateAction,
   Duration? wait,
-  Iterable<dynamic> Function()? expectStates,
-  Iterable<dynamic> Function()? expectActions,
-  Iterable<dynamic> Function()? expectErrors,
+  dynamic Function()? expectStates,
+  dynamic Function()? expectActions,
+  dynamic Function()? expectErrors,
   dynamic Function(T reStateAction)? verifyReStateAction,
   FutureOr<void> Function()? tearDown,
   bool skip = false,
