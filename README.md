@@ -34,11 +34,9 @@ the `ReState` under test. Should be used to interact with the `ReState`.
 
 `wait` is an optional duration to wait before asserting the `expectStates`.
 
-`expectStates` is an optional function that returns an iterable of states
-that are expected to be emitted by the `ReState` in order.
+`expectStates` is an optional function that returns a matcher that verifies the states that are expected to be emitted by the `ReState` in order.
 
-`expectErrors` is an optional function that returns an iterable of errors
-that are expected to be emitted by the `ReState` in order.
+`expectErrors` is an optional function that returns a matcher that verifies the errors that are expected to be thrown by the `ReState` in order.
 
 `verifyReState` is an optional function that is called to verify the
 `ReState` after the test expectations have been asserted.
@@ -96,14 +94,11 @@ the `ReStateAction`.
 
 `wait` is an optional duration to wait before asserting the `expectStates`.
 
-`expectStates` is an optional function that returns an iterable of states
-that are expected to be emitted by the `ReStateAction` in order.
+`expectStates`  is an optional function that returns a matcher that verifies the states that are expected to be emitted by the `ReStateAction` in order.
 
-`expectActions` is an optional function that returns an iterable of actions
-that are expected to be emitted by the `ReStateAction` in order.
+`expectActions` is an optional function that returns a matcher that verifies the actions that are expected to be emitted by the `ReStateAction` in order.
 
-`expectErrors` is an optional function that returns an iterable of errors
-that are expected to be emitted by the `ReStateAction` in order.
+`expectErrors` is an optional function that returns a matcher that verifies the errors that are expected to be thrown by the `ReStateAction` in order.
 
 `verifyReStateAction` is an optional function that is called to verify the
 `ReStateAction` after the test expectations have been asserted.
