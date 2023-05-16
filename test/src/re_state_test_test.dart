@@ -38,7 +38,7 @@ void main() {
       );
 
       reStateTest<WrongTestStateEvent, int>(
-        'throws a StateError when instantiate a invalid ReStateEvent',
+        'throws a StateError when instantiate an invalid ReStateEvent',
         buildReState: () => WrongTestStateEvent(0),
         expectErrors: () => [isStateError],
       );
