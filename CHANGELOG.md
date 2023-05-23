@@ -1,3 +1,6 @@
+## 0.0.5
+* Updated `re_state_action_ dependency`
+
 ## 0.0.4
 * Downgraded `test` dependency to `^1.16.0`
 * Downgraded `meta` dependency to `^1.3.0`
