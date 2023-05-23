@@ -1,5 +1,5 @@
 ## 0.0.5
-* Updated `re_state_action_ dependency`
+* Updated `re_state_action` dependency
 
 ## 0.0.4
 * Downgraded `test` dependency to `^1.16.0`
